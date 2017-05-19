@@ -3,8 +3,7 @@ require 'rails_helper'
 =begin
 As a user
 Given a job exists
-When I visit the company job page
-And I click "Edit Job"
+When I visit the job edit page
 And I change the city and level_of_interest
 And I click "Submit"
 Then I should see the updated job parameters
@@ -17,9 +16,8 @@ describe "User edits existing job" do
     job = company.jobs.create!(title: "Developer", description: "Good depending location",
     level_of_interest: 85, city: "Denver")
 
-    visit company_job_path(company, job)
+    visit edit_company_job_path(company, job)
 
-    click_on "Edit Job"
     expect(page).to have_content(company.name)
     expect(page).to have_content(job.city)
 
