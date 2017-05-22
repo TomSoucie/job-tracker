@@ -1,6 +1,6 @@
 <h3>All Categories</h3>
 
-<%= @categories.each do |category| %>
+<% @categories.each do |category| %>
   <div class=category_<%= category.id %>>
     <%= link_to category.title, category_path(category) %><br/>
     <%= link_to "Edit", edit_category_path(category) %>

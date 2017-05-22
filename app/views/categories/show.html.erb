@@ -1,0 +1,7 @@
+Category: <%= @category.title %><br/>
+
+<%= @jobs.each do |job| %>
+  <ul><%= job.title %> at <%= job.company.name %></ul>
+    <%= link_to "See Job", company_job_path(job.company, job) %>
+<% end %>
+<%= link_to "All Categories", categories_path %>
